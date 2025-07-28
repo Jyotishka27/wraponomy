@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <title>Wraponomy Menu</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      backface-visibility: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+    }
+  </style>
 </head>
 <body class="bg-black text-white font-sans">
   <header class="text-center py-6 bg-yellow-400 text-black text-4xl font-bold tracking-wider">
@@ -11,79 +26,36 @@
   </header>
 
   <section class="p-6 max-w-6xl mx-auto">
-    <!-- Category Section Template -->
     <div class="mb-10">
       <h2 class="text-3xl text-red-400 font-semibold mb-6 border-b border-gray-600 pb-2">Wraps</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <!-- Wrap Item Card -->
-        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-500 transition-shadow duration-300">
-          <img src="chicken-lebanese.jpg" alt="Chicken Lebanese Wrap" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-lg font-bold">Chicken Lebanese Wrap</h3>
-            <p class="text-green-400 font-semibold">Rs. 70</p>
+        <!-- Flip Card Example -->
+        <div class="card bg-gray-900 rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="this.classList.toggle('flipped')">
+          <div class="relative w-full h-96 card-inner">
+            <!-- Front Side -->
+            <div class="absolute inset-0 card-front">
+              <img src="wraponomy/chicken-lebanese.jpg" alt="Chicken Lebanese Wrap" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">Chicken Lebanese Wrap</h3>
+                <p class="text-green-400 font-semibold">Rs. 70</p>
+              </div>
+            </div>
+            <!-- Back Side -->
+            <div class="absolute inset-0 card-back bg-gray-800 p-4 flex flex-col justify-center items-center">
+              <video class="w-full mb-4 rounded" controls>
+                <source src="videos/chicken-lebanese.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <p class="text-sm text-gray-300">Juicy grilled chicken wrapped with Lebanese garlic sauce, pickled veggies, and crispy lettuce in a soft pita.</p>
+            </div>
           </div>
         </div>
-        <!-- Repeat this card for other wrap items -->
-        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-500 transition-shadow duration-300">
-          <img src="images/chicken-bbq.jpg" alt="Chicken Bar-B-Q Wrap" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-lg font-bold">Chicken Bar-B-Q Wrap</h3>
-            <p class="text-green-400 font-semibold">Rs. 80</p>
-          </div>
-        </div>
-        <!-- Add other wraps similarly -->
+
+        <!-- Duplicate and update this flip-card for other items -->
       </div>
     </div>
 
-    <!-- Specials -->
-    <div class="mb-10">
-      <h2 class="text-3xl text-red-400 font-semibold mb-6 border-b border-gray-600 pb-2">Specials</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-500 transition-shadow duration-300">
-          <img src="images/smoky-butter.jpg" alt="Smoky Butter Chicken Wrap" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-lg font-bold">Smoky Butter Chicken Wrap</h3>
-            <p class="text-green-400 font-semibold">Rs. 100</p>
-          </div>
-        </div>
-        <!-- Add other specials similarly -->
-      </div>
-    </div>
-
-    <!-- Salads -->
-    <div class="mb-10">
-      <h2 class="text-3xl text-red-400 font-semibold mb-6 border-b border-gray-600 pb-2">Salads</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-500 transition-shadow duration-300">
-          <img src="images/lebanese-salad.jpg" alt="Chicken Lebanese Salad" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-lg font-bold">Chicken Lebanese Salad</h3>
-            <p class="text-green-400 font-semibold">Rs. 140 / 145</p>
-          </div>
-        </div>
-        <!-- Add other salads -->
-      </div>
-    </div>
-
-    <!-- Extras (no images) -->
-    <div class="mb-10">
-      <h2 class="text-3xl text-red-400 font-semibold mb-6 border-b border-gray-600 pb-2">Extras</h2>
-      <ul class="space-y-2 text-lg">
-        <li class="flex justify-between">
-          <span>Extra Chicken</span>
-          <span class="text-green-400">Rs. 30</span>
-        </li>
-        <li class="flex justify-between">
-          <span>Extra Cheese</span>
-          <span class="text-green-400">Rs. 30</span>
-        </li>
-        <li class="flex justify-between">
-          <span>Extra Mayonnaise</span>
-          <span class="text-green-400">Rs. 20</span>
-        </li>
-      </ul>
-      <p class="text-sm text-gray-400 mt-2">* Prices are subject to change.</p>
-    </div>
+    <!-- Other sections: Specials, Salads, Extras... keep them or update as needed -->
   </section>
 </body>
 </html>
