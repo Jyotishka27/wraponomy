@@ -1,113 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Wraponomy Menu</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f8f8;
-      color: #333;
-    }
-    header {
-      background-color: #1f1f1f;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    li {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-    .price {
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1f1f1f;
-      color: white;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>Wraponomy</h1>
-    <p>Delicious Wraps, Salads & Specials</p>
+<body class="bg-black text-white font-sans">
+  <header class="text-center py-6 bg-yellow-400 text-black text-4xl font-bold tracking-wider">
+    Wraponomy
   </header>
 
-  <main>
-    <section>
-      <h2>Wraps</h2>
-      <ul>
-        <li><span>Chicken Lebanese Wrap</span><span class="price">₹70</span></li>
-        <li><span>Chicken BBQ Wrap</span><span class="price">₹70</span></li>
-        <li><span>Chicken Tandoori Wrap</span><span class="price">₹80</span></li>
-        <li><span>Chicken Chipotle Wrap</span><span class="price">₹80</span></li>
-        <li><span>Chicken Peri-Peri Wrap</span><span class="price">₹80</span></li>
-      </ul>
-    </section>
+  <section class="p-6 max-w-6xl mx-auto">
+    <!-- Category Section Template -->
+    <div class="mb-10">
+      <h2 class="text-3xl text-red-400 font-semibold mb-6 border-b border-gray-600 pb-2">Wraps</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Wrap Item Card -->
+        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-500 transition-shadow duration-300">
+          <img src="wraponomy/chicken-lebanese.jpg" alt="Chicken Lebanese Wrap" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">Chicken Lebanese Wrap</h3>
+            <p class="text-green-400 font-semibold">Rs. 70</p>
+          </div>
+        </div>
+        <!-- Repeat this card for other wrap items -->
+        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-500 transition-shadow duration-300">
+          <img src="images/chicken-bbq.jpg" alt="Chicken Bar-B-Q Wrap" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">Chicken Bar-B-Q Wrap</h3>
+            <p class="text-green-400 font-semibold">Rs. 80</p>
+          </div>
+        </div>
+        <!-- Add other wraps similarly -->
+      </div>
+    </div>
 
-    <section>
-      <h2>Specials</h2>
-      <ul>
-        <li><span>Cheesy Butter Chicken Wrap</span><span class="price">₹100</span></li>
-        <li><span>Chicken Hawaiian Wrap</span><span class="price">₹100</span></li>
-        <li><span>Ambarsariya Tikka Wrap</span><span class="price">₹120</span></li>
-        <li><span>Paneer Wrap</span><span class="price">₹100</span></li>
-      </ul>
-    </section>
+    <!-- Specials -->
+    <div class="mb-10">
+      <h2 class="text-3xl text-red-400 font-semibold mb-6 border-b border-gray-600 pb-2">Specials</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-500 transition-shadow duration-300">
+          <img src="images/smoky-butter.jpg" alt="Smoky Butter Chicken Wrap" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">Smoky Butter Chicken Wrap</h3>
+            <p class="text-green-400 font-semibold">Rs. 100</p>
+          </div>
+        </div>
+        <!-- Add other specials similarly -->
+      </div>
+    </div>
 
-    <section>
-      <h2>Salads</h2>
-      <ul>
-        <li><span>Chicken Lebanese Salad</span><span class="price">₹140/145</span></li>
-        <li><span>Chicken BBQ Salad</span><span class="price">₹140/145</span></li>
-        <li><span>Chicken Tandoori Salad</span><span class="price">₹150/155</span></li>
-        <li><span>Chicken Chipotle Salad</span><span class="price">₹150/155</span></li>
-      </ul>
-    </section>
+    <!-- Salads -->
+    <div class="mb-10">
+      <h2 class="text-3xl text-red-400 font-semibold mb-6 border-b border-gray-600 pb-2">Salads</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-500 transition-shadow duration-300">
+          <img src="images/lebanese-salad.jpg" alt="Chicken Lebanese Salad" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">Chicken Lebanese Salad</h3>
+            <p class="text-green-400 font-semibold">Rs. 140 / 145</p>
+          </div>
+        </div>
+        <!-- Add other salads -->
+      </div>
+    </div>
 
-    <section>
-      <h2>Extras</h2>
-      <ul>
-        <li><span>Extra Chicken</span><span class="price">₹30</span></li>
-        <li><span>Extra Cheese</span><span class="price">₹30</span></li>
-        <li><span>Extra Mayonnaise</span><span class="price">₹30</span></li>
+    <!-- Extras (no images) -->
+    <div class="mb-10">
+      <h2 class="text-3xl text-red-400 font-semibold mb-6 border-b border-gray-600 pb-2">Extras</h2>
+      <ul class="space-y-2 text-lg">
+        <li class="flex justify-between">
+          <span>Extra Chicken</span>
+          <span class="text-green-400">Rs. 30</span>
+        </li>
+        <li class="flex justify-between">
+          <span>Extra Cheese</span>
+          <span class="text-green-400">Rs. 30</span>
+        </li>
+        <li class="flex justify-between">
+          <span>Extra Mayonnaise</span>
+          <span class="text-green-400">Rs. 20</span>
+        </li>
       </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Wraponomy | All rights reserved</p>
-  </footer>
+      <p class="text-sm text-gray-400 mt-2">* Prices are subject to change.</p>
+    </div>
+  </section>
 </body>
 </html>
