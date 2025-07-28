@@ -1,79 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wraponomy Menu</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
     }
-    .container {
-      max-width: 600px;
-      margin: auto;
+    header {
+      background-color: #1f1f1f;
+      color: white;
       padding: 20px;
-    }
-    h1 {
       text-align: center;
-      font-size: 36px;
-      color: #FFD700;
-      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    section {
+      margin-bottom: 30px;
     }
     h2 {
-      margin-top: 30px;
-      color: #FF6347;
-      border-bottom: 1px solid #444;
+      border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
     }
-    .item {
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
       display: flex;
       justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px dotted #444;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
     }
     .price {
-      color: #90EE90;
+      font-weight: bold;
     }
-    .extras {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 10px;
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1f1f1f;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>Wraponomy</h1>
+    <p>Delicious Wraps, Salads & Specials</p>
+  </header>
 
-    <h2>Wraps</h2>
-    <div class="item"><span>Chicken Lebanese Wrap</span><span class="price">Rs. 70</span></div>
-    <div class="item"><span>Chicken Bar-B-Q Wrap</span><span class="price">Rs. 80</span></div>
-    <div class="item"><span>Chicken Tandoori Wrap</span><span class="price">Rs. 80</span></div>
-    <div class="item"><span>Chicken Chipotle Wrap</span><span class="price">Rs. 80</span></div>
-    <div class="item"><span>Chicken Chettinad Wrap</span><span class="price">Rs. 90</span></div>
+  <main>
+    <section>
+      <h2>Wraps</h2>
+      <ul>
+        <li><span>Chicken Lebanese Wrap</span><span class="price">₹70</span></li>
+        <li><span>Chicken BBQ Wrap</span><span class="price">₹70</span></li>
+        <li><span>Chicken Tandoori Wrap</span><span class="price">₹80</span></li>
+        <li><span>Chicken Chipotle Wrap</span><span class="price">₹80</span></li>
+        <li><span>Chicken Peri-Peri Wrap</span><span class="price">₹80</span></li>
+      </ul>
+    </section>
 
-    <h2>Specials</h2>
-    <div class="item"><span>Smoky Butter Chicken Wrap</span><span class="price">Rs. 100</span></div>
-    <div class="item"><span>Chicken Hawaiian Wrap</span><span class="price">Rs. 100</span></div>
-    <div class="item"><span>Ambur Prawn Wrap</span><span class="price">Rs. 120</span></div>
-    <div class="item"><span>Cheesy Peri Peri Wrap</span><span class="price">Rs. 100</span></div>
+    <section>
+      <h2>Specials</h2>
+      <ul>
+        <li><span>Cheesy Butter Chicken Wrap</span><span class="price">₹100</span></li>
+        <li><span>Chicken Hawaiian Wrap</span><span class="price">₹100</span></li>
+        <li><span>Ambarsariya Tikka Wrap</span><span class="price">₹120</span></li>
+        <li><span>Paneer Wrap</span><span class="price">₹100</span></li>
+      </ul>
+    </section>
 
-    <h2>Salads</h2>
-    <div class="item"><span>Chicken Lebanese Salad</span><span class="price">Rs. 140 / 145</span></div>
-    <div class="item"><span>Chicken Bar-B-Q Salad</span><span class="price">Rs. 150 / 155</span></div>
-    <div class="item"><span>Chicken Chipotle Salad</span><span class="price">Rs. 150 / 155</span></div>
-    <div class="item"><span>Chicken Chettinad Salad</span><span class="price">Rs. 150 / 155</span></div>
+    <section>
+      <h2>Salads</h2>
+      <ul>
+        <li><span>Chicken Lebanese Salad</span><span class="price">₹140/145</span></li>
+        <li><span>Chicken BBQ Salad</span><span class="price">₹140/145</span></li>
+        <li><span>Chicken Tandoori Salad</span><span class="price">₹150/155</span></li>
+        <li><span>Chicken Chipotle Salad</span><span class="price">₹150/155</span></li>
+      </ul>
+    </section>
 
-    <h2>Extras</h2>
-    <div class="item"><span>Extra Chicken</span><span class="price">Rs. 30</span></div>
-    <div class="item"><span>Extra Cheese</span><span class="price">Rs. 30</span></div>
-    <div class="item"><span>Extra Mayonnaise</span><span class="price">Rs. 20</span></div>
+    <section>
+      <h2>Extras</h2>
+      <ul>
+        <li><span>Extra Chicken</span><span class="price">₹30</span></li>
+        <li><span>Extra Cheese</span><span class="price">₹30</span></li>
+        <li><span>Extra Mayonnaise</span><span class="price">₹30</span></li>
+      </ul>
+    </section>
+  </main>
 
-    <div class="extras">* Prices are subject to change.</div>
-  </div>
+  <footer>
+    <p>&copy; 2025 Wraponomy | All rights reserved</p>
+  </footer>
 </body>
 </html>
