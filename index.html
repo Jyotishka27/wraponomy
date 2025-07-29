@@ -5,38 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wraponomy Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .card {
-        perspective: 1000px;
-      }
-      .card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-      }
-      .card:hover .card-inner {
-        transform: rotateY(180deg);
-      }
-      .card-front,
-      .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 1rem;
-        overflow: hidden;
-      }
-      .card-front {
-        background-size: cover;
-        background-position: center;
-      }
-      .card-back {
-        background-color: #000;
-        transform: rotateY(180deg);
-      }
-    </style>
+  <style>
+    .card {
+      perspective: 1000px;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+    }
+  
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+  
+    .card-front,
+    .card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+  
+    .card-front {
+      z-index: 2;
+      transform: rotateY(0deg);
+    }
+  
+    .card-back {
+      transform: rotateY(180deg);
+      z-index: 1;
+    }
+  </style>
+    
   </head>
   <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
@@ -53,8 +63,8 @@
               </div>
             </div>
             <div class="card-back flex items-center justify-center">
-              <video autoplay loop muted class="w-full h-full object-cover">
-                <source src="chicken-lebanese.mp4" type="video/mp4" />
+              <video autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover">
+                <source src="Butter Chicken.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -71,8 +81,8 @@
               </div>
             </div>
             <div class="card-back flex items-center justify-center">
-              <video autoplay loop muted class="w-full h-full object-cover">
-                <source src="Chicken Bar-B-Q Wrap.mp4" type="video/mp4" />
+              <video autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover">
+                <source src="Butter Chicken.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -89,8 +99,8 @@
               </div>
             </div>
             <div class="card-back flex items-center justify-center">
-              <video autoplay loop muted class="w-full h-full object-cover">
-                <source src="Chicken Tandoori Wrap.mp4" type="video/mp4" />
+              <video autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover">
+                <source src="Butter Chicken.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -107,8 +117,8 @@
               </div>
             </div>
             <div class="card-back flex items-center justify-center">
-              <video autoplay loop muted class="w-full h-full object-cover">
-                <source src="Chicken Chipotle Wrap.mp4" type="video/mp4" />
+              <video autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover">
+                <source src="Butter Chicken.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -125,7 +135,7 @@
               </div>
             </div>
             <div class="card-back flex items-center justify-center">
-              <video autoplay loop muted class="w-full h-full object-cover">
+              <video autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover">
                 <source src="Butter Chicken.mp4" type="video/mp4" />
               </video>
             </div>
