@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wraponomy Menu</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
   <style>
+    /* Background settings */
     body {
       background-image: url('Background.png');
       background-size: cover;
@@ -14,17 +19,12 @@
       background-attachment: fixed;
     }
 
+    /* Flip animation base */
     .card {
       perspective: 1000px;
     }
 
-    .card-inner {
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    
+    /* Inner flip logic */
     .card-inner {
       position: relative;
       width: 100%;
@@ -33,10 +33,12 @@
       transition: transform 0.6s;
     }
 
+    /* Trigger 180 rotation */
     .card.flipped .card-inner {
       transform: rotateY(180deg);
     }
 
+    /* Front & Back of the card */
     .card-front,
     .card-back {
       position: absolute;
@@ -47,58 +49,70 @@
       left: 0;
     }
 
+    /* Back side flipped 180 */
     .card-back {
       transform: rotateY(180deg);
     }
   </style>
 </head>
+
 <body class="text-white font-sans min-h-screen p-8 backdrop-blur-md bg-black/50">
 
-  <header class="mb-8 text-center">
-    <h1 class="text-4xl font-bold text-yellow-400">Wraponomy Menu</h1>
-    <p class="text-gray-400 mt-2">Click on an item to flip and view more details</p>
+  <!-- Header -->
+  <header class="mb-10 text-center">
+    <h1 class="text-4xl font-extrabold text-yellow-400 drop-shadow-md">Wraponomy Menu</h1>
+    <p class="text-gray-300 mt-2 text-sm">Click on a wrap to flip and view more details</p>
   </header>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Grid layout for wrap cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Wrap Card Component Template -->
+    <!-- Repeat this for each menu item -->
 
     <!-- Chicken Lebanese Wrap -->
-    <div class="card bg-gray-800 rounded-lg shadow-lg cursor-pointer" onclick="flipCard(this)">
+    <div class="card bg-gray-800 rounded-2xl shadow-lg cursor-pointer" onclick="flipCard(this)">
       <div class="card-inner h-96">
-        <div class="card-front rounded-lg overflow-hidden">
+
+        <!-- Front Side -->
+        <div class="card-front rounded-2xl overflow-hidden">
           <img src="chicken-lebanese.jpg" alt="Chicken Lebanese Wrap" class="w-full h-48 object-cover">
           <div class="p-4">
-            <h3 class="text-xl font-bold">Chicken Lebanese Wrap</h3>
-            <p class="text-green-400 text-lg font-semibold">Rs. 70</p>
+            <h3 class="text-xl font-semibold mb-2">Chicken Lebanese Wrap</h3>
+            <p class="text-green-400 text-lg font-bold">Rs. 70</p>
           </div>
         </div>
-        <div class="card-back bg-gray-800 rounded-lg p-4 flex flex-col justify-center items-center">
+
+        <!-- Back Side -->
+        <div class="card-back bg-gray-900 rounded-2xl p-4 flex flex-col justify-center items-center">
           <video class="w-full h-48 rounded mb-4" muted>
             <source src="chicken-lebanese.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <p class="text-sm text-gray-300 text-center">
+          <p class="text-sm text-gray-300 text-center leading-relaxed">
             Juicy grilled chicken wrapped with Lebanese garlic sauce, pickled veggies, and crispy lettuce in a soft pita.
           </p>
         </div>
+
       </div>
     </div>
 
     <!-- Chicken Bar-B-Q Wrap -->
-    <div class="card bg-gray-800 rounded-lg shadow-lg cursor-pointer" onclick="flipCard(this)">
+    <div class="card bg-gray-800 rounded-2xl shadow-lg cursor-pointer" onclick="flipCard(this)">
       <div class="card-inner h-96">
-        <div class="card-front rounded-lg overflow-hidden">
+        <div class="card-front rounded-2xl overflow-hidden">
           <img src="Chicken Bar-B-Q Wrap.jpg" alt="Chicken Bar-B-Q Wrap" class="w-full h-48 object-cover">
           <div class="p-4">
-            <h3 class="text-xl font-bold">Chicken Bar-B-Q Wrap</h3>
-            <p class="text-green-400 text-lg font-semibold">Rs. 80</p>
+            <h3 class="text-xl font-semibold mb-2">Chicken Bar-B-Q Wrap</h3>
+            <p class="text-green-400 text-lg font-bold">Rs. 80</p>
           </div>
         </div>
-        <div class="card-back bg-gray-800 rounded-lg p-4 flex flex-col justify-center items-center">
+        <div class="card-back bg-gray-900 rounded-2xl p-4 flex flex-col justify-center items-center">
           <video class="w-full h-48 rounded mb-4" muted>
             <source src="Chicken Bar-B-Q Wrap.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <p class="text-sm text-gray-300 text-center">
+          <p class="text-sm text-gray-300 text-center leading-relaxed">
             Smoky BBQ chicken, tangy onions, and grilled peppers packed in a warm wrap.
           </p>
         </div>
@@ -106,21 +120,21 @@
     </div>
 
     <!-- Chicken Tandoori Wrap -->
-    <div class="card bg-gray-800 rounded-lg shadow-lg cursor-pointer" onclick="flipCard(this)">
+    <div class="card bg-gray-800 rounded-2xl shadow-lg cursor-pointer" onclick="flipCard(this)">
       <div class="card-inner h-96">
-        <div class="card-front rounded-lg overflow-hidden">
+        <div class="card-front rounded-2xl overflow-hidden">
           <img src="Chicken Tandoori Wrap.jpg" alt="Chicken Tandoori Wrap" class="w-full h-48 object-cover">
           <div class="p-4">
-            <h3 class="text-xl font-bold">Chicken Tandoori Wrap</h3>
-            <p class="text-green-400 text-lg font-semibold">Rs. 75</p>
+            <h3 class="text-xl font-semibold mb-2">Chicken Tandoori Wrap</h3>
+            <p class="text-green-400 text-lg font-bold">Rs. 75</p>
           </div>
         </div>
-        <div class="card-back bg-gray-800 rounded-lg p-4 flex flex-col justify-center items-center">
+        <div class="card-back bg-gray-900 rounded-2xl p-4 flex flex-col justify-center items-center">
           <video class="w-full h-48 rounded mb-4" muted>
             <source src="Chicken Tandoori Wrap.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <p class="text-sm text-gray-300 text-center">
+          <p class="text-sm text-gray-300 text-center leading-relaxed">
             Tender tandoori chicken with mint chutney, onions, and lettuce wrapped in soft bread.
           </p>
         </div>
@@ -128,21 +142,21 @@
     </div>
 
     <!-- Chicken Chipotle Wrap -->
-    <div class="card bg-gray-800 rounded-lg shadow-lg cursor-pointer" onclick="flipCard(this)">
+    <div class="card bg-gray-800 rounded-2xl shadow-lg cursor-pointer" onclick="flipCard(this)">
       <div class="card-inner h-96">
-        <div class="card-front rounded-lg overflow-hidden">
+        <div class="card-front rounded-2xl overflow-hidden">
           <img src="Chicken Chipotle Wrap.jpg" alt="Chicken Chipotle Wrap" class="w-full h-48 object-cover">
           <div class="p-4">
-            <h3 class="text-xl font-bold">Chicken Chipotle Wrap</h3>
-            <p class="text-green-400 text-lg font-semibold">Rs. 85</p>
+            <h3 class="text-xl font-semibold mb-2">Chicken Chipotle Wrap</h3>
+            <p class="text-green-400 text-lg font-bold">Rs. 85</p>
           </div>
         </div>
-        <div class="card-back bg-gray-800 rounded-lg p-4 flex flex-col justify-center items-center">
+        <div class="card-back bg-gray-900 rounded-2xl p-4 flex flex-col justify-center items-center">
           <video class="w-full h-48 rounded mb-4" muted>
             <source src="Chicken Chipotle Wrap.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <p class="text-sm text-gray-300 text-center">
+          <p class="text-sm text-gray-300 text-center leading-relaxed">
             Spicy chipotle-marinated chicken with creamy sauce and fresh veggies in a wrap.
           </p>
         </div>
@@ -151,10 +165,13 @@
 
   </div>
 
+  <!-- JavaScript to handle flip animation and video control -->
   <script>
     function flipCard(cardElement) {
       cardElement.classList.toggle('flipped');
       const video = cardElement.querySelector('.card-back video');
+      
+      // Play video on flip, pause and reset on unflip
       if (cardElement.classList.contains('flipped')) {
         video.play().catch(e => console.log("Autoplay failed:", e));
       } else {
